@@ -154,4 +154,32 @@ h3 { font-size: var(--fs-h3); }
     background-image: url(../img/services-bg.jpg);
     background-size: cover;
     color: var(--clr-light);
+    text-align: center;
+}
+
+.section__title--services {
+    position: relative;
+    color: var(--clr-accent);
+}
+
+.section__title--services::after {
+    content: '';
+    display: block;
+    width: 3em;
+    height: 2px;
+    margin: 0.5em auto 1em;
+    background: var(--clr-light);
+    opacity: 0.5;
+}
+
+@media (min-width: 800px) {
+    .services {
+        display: flex;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .service + .service {
+        margin-left: 2em;
+    }
 }
