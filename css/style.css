@@ -21,6 +21,7 @@
     --fs-h2: 2.25rem;
     --fs-h3: 1.25rem;
     --fs-body: 1.5rem;
+    --fs-p: 1rem;
 
     --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),
     0.125em 0.125em 0.25em rgba(0,0,0,.15);
@@ -115,6 +116,12 @@ h3 { font-size: var(--fs-h3); }
 .section__subtitle {
     margin: 0;
     font-size: var(--fs-h3);
+}
+
+.section__subtitle--work {
+    color: var(--clr-accent);
+    font-weight: var(--fw-bold);
+    margin-bottom: 2em;
 }
 
 .section__subtitle--intro,
@@ -219,3 +226,65 @@ h3 { font-size: var(--fs-h3); }
         margin-left: 2em;
     }
 }
+
+/* ABOUT ME */
+.about-me {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-me__body {
+    font-size: var(--fs-body);
+}
+
+.about-me__img {
+    box-shadow: var(--bs);
+}
+
+@media (min-width: 600px) {
+    .about-me {
+        display: grid;
+        grid-template-columns: 1fr 200px;
+        grid-template-areas: 
+            "title img"
+            "subtitle img"
+            "text img";
+            grid-column-gap: 2em;
+    }
+
+    .section__title--about {
+        grid-area: title;
+    }
+
+    .section__subtitle--about {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        position: relative;
+        left: -1em;
+        width: calc(100% + 2em);
+        padding-left: 1em;
+        padding-right: calc(200px + 4em);
+
+    }
+
+    .about-me__body p {
+        /* grid-area: text; */
+        font-size: var(--fs-p);
+    }
+
+    .about-me__img {
+        grid-area: img;
+        position: relative;
+        z-index: 2;
+    }
+}
+
+
+/* MY WORK SECTION */
+.my-work {
+   background-color: var(--clr-dark);
+   color: var(--clr-light);
+   text-align: center; 
+}
+
+
