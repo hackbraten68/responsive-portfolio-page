@@ -38,6 +38,10 @@
 
 /* GENEREL STYLES */
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--clr-light);
   color: var(--clr-dark);
@@ -194,6 +198,27 @@ header {
   position: absolute;
   right: 1em;
   top: 1em;
+  z-index: 1000;
+}
+
+.nav-open .nav {
+  transform: translateX(0%)
+}
+
+.nav-open .nav-toggle {
+  position: fixed;
+}
+
+.nav-open .hamburger {
+  transform: rotate(.625turn);
+}
+
+.nav-open .hamburger::before {
+  transform: rotate(90deg) translateX(-6px);
+}
+
+.nav-open .hamburger::after {
+  opacity: 0;
 }
 
 .hamburger {
@@ -204,7 +229,7 @@ header {
 .hamburger,
 .hamburger::before,
 .hamburger::after {
-  background: var(--clr-dark);
+  background: var(--clr-accent);
   width: 2em;
   height: 3px;
   border-radius: 1em;
@@ -445,4 +470,16 @@ header {
 
 .social-list__link {
   padding: .5em;
+}
+
+/* INDIVIDUAL PORTFOLIO ITEM STYLES */
+
+.portfolio-item-individual {
+  padding: 0 2em 2em;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.portfolio-item-individual p {
+  
 }
